@@ -1,0 +1,49 @@
+City,Country,Date,Temperature,Conditions
+Paris,France,20/09/2022 0:00,13,Clear
+Paris,France,20/09/2022 1:00,13,Clear
+Paris,France,20/09/2022 2:00,13,Partially cloudy
+Paris,France,20/09/2022 3:00,13,Partially cloudy
+Paris,France,20/09/2022 4:00,13,Partially cloudy
+Paris,France,20/09/2022 5:00,13,Clear
+Paris,France,20/09/2022 6:00,14,Clear
+Paris,France,20/09/2022 7:00,14,Partially cloudy
+Paris,France,20/09/2022 8:00,15,Partially cloudy
+Paris,France,20/09/2022 9:00,16,Overcast
+Paris,France,20/09/2022 10:00,17,Overcast
+Paris,France,20/09/2022 11:00,17,Partially cloudy
+Paris,France,20/09/2022 12:00,17,Partially cloudy
+Paris,France,20/09/2022 13:00,18,Cloudy
+Paris,France,20/09/2022 14:00,19,Cloudy
+Paris,France,20/09/2022 15:00,17,Cloudy
+Paris,France,20/09/2022 16:00,17,Partially cloudy
+Paris,France,20/09/2022 17:00,17,Cloudy
+Paris,France,20/09/2022 18:00,16,Partially cloudy
+Paris,France,20/09/2022 19:00,16,Clear
+Paris,France,20/09/2022 20:00,15,Clear
+Paris,France,20/09/2022 21:00,13,Clear
+Paris,France,20/09/2022 22:00,13,Partially cloudy
+Paris,France,20/09/2022 23:00,13,Cloudy
+Lviv,Ukraine,20/09/2022 0:00,12,Cloudy
+Lviv,Ukraine,20/09/2022 1:00,12,Cloudy
+Lviv,Ukraine,20/09/2022 2:00,12,Cloudy
+Lviv,Ukraine,20/09/2022 3:00,12,Cloudy
+Lviv,Ukraine,20/09/2022 4:00,12,Cloudy
+Lviv,Ukraine,20/09/2022 5:00,12,Cloudy
+Lviv,Ukraine,20/09/2022 6:00,13,Cloudy
+Lviv,Ukraine,20/09/2022 7:00,13,Cloudy
+Lviv,Ukraine,20/09/2022 8:00,14,Rainy
+Lviv,Ukraine,20/09/2022 9:00,15,Rainy
+Lviv,Ukraine,20/09/2022 10:00,15,Rainy
+Lviv,Ukraine,20/09/2022 11:00,16,Rainy
+Lviv,Ukraine,20/09/2022 12:00,16,Rainy
+Lviv,Ukraine,20/09/2022 13:00,16,Cloudy
+Lviv,Ukraine,20/09/2022 14:00,16,Cloudy
+Lviv,Ukraine,20/09/2022 15:00,16,Cloudy
+Lviv,Ukraine,20/09/2022 16:00,16,Cloudy
+Lviv,Ukraine,20/09/2022 17:00,16,Partially cloudy
+Lviv,Ukraine,20/09/2022 18:00,15,Partially cloudy
+Lviv,Ukraine,20/09/2022 19:00,14,Clear
+Lviv,Ukraine,20/09/2022 20:00,13,Clear
+Lviv,Ukraine,20/09/2022 21:00,12,Partially cloudy
+Lviv,Ukraine,20/09/2022 22:00,9,Cloudy
+Lviv,Ukraine,20/09/2022 23:00,9,Partially cloudy
