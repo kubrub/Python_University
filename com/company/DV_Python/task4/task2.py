@@ -1,3 +1,23 @@
+import logging
+import sys
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
+
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setLevel(logging.DEBUG)
+stdout_handler.setFormatter(formatter)
+
+file_handler = logging.FileHandler('logs.log')
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(formatter)
+
+
+logger.addHandler(file_handler)
+logger.addHandler(stdout_handler)
+
+
 class Stack:
     def __init__(self):
         self.stack = []
@@ -6,22 +26,27 @@ class Stack:
         return str(self.stack)
 
     def push(self, value):
+        logger.info("Push value")
         self.stack.append(value)
         return self
 
     def pop(self):
+        logger.info("Pop value")
         if self.stack:
             return self.stack.pop()
         else:
             return None
 
     def empty(self):
+        logger.info("Empty function")
         return not self.stack
 
     def len(self):
+        logger.info("Len of stack")
         return len(self.stack)
 
     def clear(self):
+        logger.info("Clear stack")
         self.stack.clear()
 
 
@@ -39,51 +64,56 @@ def check_formula(formula: str) -> bool:
         if char in left_parentheses:
             stack.push(char)
         elif char in operands:
-            # mark operands as F
+            logger.info("Mark operands as F")
             stack.push('F')
         elif char in operators:
             stack.push(char)
         elif char in right_parentheses:
             while True:
-                # value on top of the stack before closing parenthesis
-                # must always be F (i.e. operand)
+                logger.info("Value on top of the stack before closing parenthesis must always be F (i.e. operand)")
                 rhs = stack.pop()
                 if rhs != 'F':
                     return False
-                # next value must be either operator or matching parenthesis
-                # (in which case last operand should be pushed back into
-                # the stack and loop stopped)
+
+                logger.info("Next value must be either operator or matching parenthesis (in which case last operand should be pushed back into the stack and loop stopped)")
                 op = stack.pop()
                 if op == match_parentheses[char]:
+                    logger.info("Stack push 'F' and break")
                     stack.push('F')
                     break
                 elif op not in operators:
+                    logger.info("If op not in operators, return false")
                     return False
-                # if last extracted value is an operator than there must
-                # be other operand
+                logger.info("If last extracted value is an operator than there must be other operand")
                 lhs = stack.pop()
                 if lhs != 'F':
+                    logger.info("If lhs != 'F', return false")
                     return False
-                # if all previous steps were successful push 'computation'
-                # result (which is also an operand) into the stack
+
+                logger.info("If all previous steps were successful push 'computation' result (which is also an operand) into the stack")
                 stack.push('F')
 
-    # perform simillar steps as above until stack is not empty
-    # that is needed to check what is left after processing all parentheses
+    logger.info("perform similar steps as above until stack is not empty")
+    logger.info("that is needed to check what is left after processing all parentheses")
     while not stack.empty():
         rhs = stack.pop()
         if rhs != 'F':
+            logger.info("if rhs != 'F', return False")
             return False
         if stack.empty():
+            logger.info("if stack is empty, we break")
             break
         op = stack.pop()
         if op not in operators:
+            logger.info("If op not in operators, we return false")
             return False
         lhs = stack.pop()
         if lhs != 'F':
+            logger.info("If lhs != 'F', we return false")
             return False
         stack.push('F')
 
+    logger.info("Return true")
     return True
 
 
@@ -110,14 +140,13 @@ help_msg = \
 
 
 def main():
-    print('Welcome! Type "help" for more information. '
-          'Type "exit" to exit.')
+    logger.info('Welcome! Type "help" for more information. Type "exit" to exit.')
 
     while True:
         command = input('> ')
 
         if command == 'help':
-            print(help_msg)
+            logger.info(help_msg)
 
         elif command == 'exit':
             return
@@ -149,11 +178,11 @@ def main():
                 formula = 'x + [y + z}'
 
             else:
-                print(f'Unknown command: {command}')
+                logger.info(f'Unknown command: {command}')
                 continue
 
             result = check_formula(formula)
-            print(result)
+            logger.info(result)
 
 
 if __name__ == '__main__':

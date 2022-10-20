@@ -1,3 +1,24 @@
+import logging
+import sys
+
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
+
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setLevel(logging.DEBUG)
+stdout_handler.setFormatter(formatter)
+
+file_handler = logging.FileHandler('logs.log')
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(formatter)
+
+
+logger.addHandler(file_handler)
+logger.addHandler(stdout_handler)
+
+
 class Stack:
     def __init__(self):
         self.stack = []
@@ -6,22 +27,27 @@ class Stack:
         return str(self.stack)
 
     def push(self, value):
+        logger.info("Push value")
         self.stack.append(value)
         return self
 
     def pop(self):
+        logger.info("Pop value")
         if self.stack:
             return self.stack.pop()
         else:
             return None
 
     def empty(self):
+        logger.info("Empty function")
         return not self.stack
 
     def len(self):
+        logger.info("Len of stack")
         return len(self.stack)
 
     def clear(self):
+        logger.info("Clear stack")
         self.stack.clear()
 
 
@@ -33,9 +59,10 @@ def evaluate(formula: str) -> int:
     while i < len(formula):
         char = formula[i]
 
-        # push operator to operators stack
+        logger.info("Push operator to operators stack")
         if char == 'S' or char == 'D':
             operators.push(char)
+
 
         # push number to numbers stack
         elif char.isdigit():
@@ -45,7 +72,7 @@ def evaluate(formula: str) -> int:
             number = formula[number_start:i+1]
             numbers.push(int(number))
 
-        # pop operator and numbers and perform calculations
+        # ("pop operator and numbers and perform calculations")
         elif char == ')':
             op = operators.pop()
             rhs = numbers.pop()
@@ -82,14 +109,13 @@ help_msg = \
 
 
 def main():
-    print('Welcome! Type "help" for more information. '
-          'Type "exit" to exit.')
+    logger.info('Welcome! Type "help" for more information. Type "exit" to exit.')
 
     while True:
         command = input('> ')
 
         if command == 'help':
-            print(help_msg)
+            logger.info(help_msg)
 
         elif command == 'exit':
             return
@@ -117,11 +143,11 @@ def main():
                 formula = "S(D(10,2),D(S(20,4),3))"
 
             else:
-                print(f'Unknown command: {command}')
+                logger.info(f'Unknown command: {command}')
                 continue
 
             result = evaluate(formula)
-            print(result)
+            logger.info(result)
 
 
 if __name__ == '__main__':
