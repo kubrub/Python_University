@@ -2,11 +2,28 @@ import os
 import os.path
 import glob
 import stat
+import logging
+import sys
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
+
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setLevel(logging.DEBUG)
+stdout_handler.setFormatter(formatter)
+
+file_handler = logging.FileHandler('logs.log')
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(formatter)
+
+logger.addHandler(file_handler)
+logger.addHandler(stdout_handler)
 
 
 def task4():
     programDir = os.path.abspath('.')
-    testFolder = os.path.join(programDir, 'Test')
+    testFolder = os.path.join(programDir, 'test')
     filesAtDir = glob.glob(os.path.join(testFolder, '*'))
     fileWithExtensions = []
     uniqueExtensions = []
@@ -15,18 +32,18 @@ def task4():
         head, filename = os.path.split(path)
         if ext not in uniqueExtensions:
             uniqueExtensions.append(ext)
-        fileWithExtensions.append({'path': path, 'name': filename, 'ext':ext})
-    print(uniqueExtensions)
+        fileWithExtensions.append({'path': path, 'name': filename, 'ext': ext})
+    logger.info(uniqueExtensions)
     for extension in uniqueExtensions:
         newDirName = os.path.join(programDir, f'Test_{extension[1:]}')
         os.mkdir(newDirName)
-    print('New folder created')
+    logger.info('New folder created')
     for file in fileWithExtensions:
         newDirName = os.path.join(programDir, f'Test_{file["ext"][1:]}')
         newFileName = os.path.join(newDirName, file["name"])
-        os.chmod(file['path'], stat.S_IRWXU| stat.S_IRWXG| stat.S_IRWXO)
+        os.chmod(file['path'], stat.S_IRWXU | stat.S_IRWXG | stat.S_IRWXO)
         os.replace(file['path'], newFileName)
-    print('Files moved')
+    logger.info('Files moved')
 
 
 if __name__ == '__main__':
