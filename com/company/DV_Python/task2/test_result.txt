@@ -1,0 +1,74 @@
+Maximum temperature (19.0 °C) on the interval from 20/09/2022 00:00 to 20/09/2022 23:00 in the city Paris
+Minimum temperature (9.0 °C) on the interval from 20/09/2022 00:00 to 20/09/2022 23:00 in the city Lviv
+Lviv, Ukraine (2022-09-20 00:00:00): 
+	 Temperature: 12.0 °C 
+	 Умови: Cloudy
+Lviv, Ukraine (2022-09-20 01:00:00): 
+	 Temperature: 12.0 °C 
+	 Умови: Cloudy
+Lviv, Ukraine (2022-09-20 02:00:00): 
+	 Temperature: 12.0 °C 
+	 Умови: Cloudy
+Lviv, Ukraine (2022-09-20 03:00:00): 
+	 Temperature: 12.0 °C 
+	 Умови: Cloudy
+Lviv, Ukraine (2022-09-20 04:00:00): 
+	 Temperature: 12.0 °C 
+	 Умови: Cloudy
+Lviv, Ukraine (2022-09-20 05:00:00): 
+	 Temperature: 12.0 °C 
+	 Умови: Cloudy
+Lviv, Ukraine (2022-09-20 06:00:00): 
+	 Temperature: 13.0 °C 
+	 Умови: Cloudy
+Lviv, Ukraine (2022-09-20 07:00:00): 
+	 Temperature: 13.0 °C 
+	 Умови: Cloudy
+Lviv, Ukraine (2022-09-20 08:00:00): 
+	 Temperature: 14.0 °C 
+	 Умови: Rainy
+Lviv, Ukraine (2022-09-20 09:00:00): 
+	 Temperature: 15.0 °C 
+	 Умови: Rainy
+Lviv, Ukraine (2022-09-20 10:00:00): 
+	 Temperature: 15.0 °C 
+	 Умови: Rainy
+Lviv, Ukraine (2022-09-20 11:00:00): 
+	 Temperature: 16.0 °C 
+	 Умови: Rainy
+Lviv, Ukraine (2022-09-20 12:00:00): 
+	 Temperature: 16.0 °C 
+	 Умови: Rainy
+Lviv, Ukraine (2022-09-20 13:00:00): 
+	 Temperature: 16.0 °C 
+	 Умови: Cloudy
+Lviv, Ukraine (2022-09-20 14:00:00): 
+	 Temperature: 16.0 °C 
+	 Умови: Cloudy
+Lviv, Ukraine (2022-09-20 15:00:00): 
+	 Temperature: 16.0 °C 
+	 Умови: Cloudy
+Lviv, Ukraine (2022-09-20 16:00:00): 
+	 Temperature: 16.0 °C 
+	 Умови: Cloudy
+Lviv, Ukraine (2022-09-20 17:00:00): 
+	 Temperature: 16.0 °C 
+	 Умови: Partially cloudy
+Lviv, Ukraine (2022-09-20 18:00:00): 
+	 Temperature: 15.0 °C 
+	 Умови: Partially cloudy
+Lviv, Ukraine (2022-09-20 19:00:00): 
+	 Temperature: 14.0 °C 
+	 Умови: Clear
+Lviv, Ukraine (2022-09-20 20:00:00): 
+	 Temperature: 13.0 °C 
+	 Умови: Clear
+Lviv, Ukraine (2022-09-20 21:00:00): 
+	 Temperature: 12.0 °C 
+	 Умови: Partially cloudy
+Lviv, Ukraine (2022-09-20 22:00:00): 
+	 Temperature: 9.0 °C 
+	 Умови: Cloudy
+Lviv, Ukraine (2022-09-20 23:00:00): 
+	 Temperature: 9.0 °C 
+	 Умови: Partially cloudy
