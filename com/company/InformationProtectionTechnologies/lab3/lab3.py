@@ -92,7 +92,6 @@ class Kasumi:
             self.key_KI3[i] = key_prime[_mod(i + 7)]
 
     def fun_FI(self, input, round_key):
-        # assert _bitlen(input)  <= 16
 
         left = input >> 7
         right = input & 0b1111111
@@ -101,35 +100,26 @@ class Kasumi:
         round_key_2 = round_key & 0b111111111
 
         tmp_l = right
-        # assert _bitlen(left)  <= 9
         tmp_r = S9[left] ^ right
 
         left = tmp_r ^ round_key_2
-        # assert _bitlen(tmp_l) <= 7
         right = S7[tmp_l] ^ (tmp_r & 0b1111111) ^ round_key_1
 
         tmp_l = right
-        # assert _bitlen(left)  <= 9
         tmp_r = S9[left] ^ right
 
-        # assert _bitlen(tmp_l) <= 7
         left = S7[tmp_l] ^ (tmp_r & 0b1111111)
         right = tmp_r
 
-        # assert _bitlen(left)  <= 7
-        # assert _bitlen(right) <= 9
         return (left << 9) | right
 
     def fun_FO(self, input, round_i):
-        # assert _bitlen(input)  <= 32
-        # assert round_i >= 1 and round_i <= 8
 
         in_left = input >> 16
         in_right = input & 0xFFFF
 
         out_left = in_right  # this is not Feistel at all, maybe not reversible
-        out_right = self.fun_FI(in_left ^ self.key_KO1[round_i],
-                                self.key_KI1[round_i]) ^ in_right
+        out_right = self.fun_FI(in_left ^ self.key_KO1[round_i], self.key_KI1[round_i]) ^ in_right
 
         in_left = out_right  # use in_* as temp variables
         in_right = self.fun_FI(out_left ^ self.key_KO2[round_i],
@@ -139,13 +129,9 @@ class Kasumi:
         out_right = self.fun_FI(in_left ^ self.key_KO3[round_i],
                                 self.key_KI3[round_i]) ^ in_right
 
-        # assert _bitlen(out_left)  <= 16
-        # assert _bitlen(out_right) <= 16
         return (out_left << 16) | out_right
 
     def fun_FL(self, input, round_i):
-        # assert _bitlen(input)  <= 32
-        # assert round_i >= 1 and round_i <= 8
 
         in_left = input >> 16
         in_right = input & 0xFFFF
@@ -153,13 +139,9 @@ class Kasumi:
         out_right = in_right ^ _shift(in_left & self.key_KL1[round_i], 1)
         out_left = in_left ^ _shift(out_right | self.key_KL2[round_i], 1)
 
-        # assert _bitlen(out_left)  <= 16
-        # assert _bitlen(out_right) <= 16
         return (out_left << 16) | out_right
 
     def fun_f(self, input, round_i):
-        # assert _bitlen(input)  <= 32
-        # assert round_i >= 1 and round_i <= 8
 
         if round_i % 2 == 1:
             state = self.fun_FL(input, round_i)
@@ -168,31 +150,20 @@ class Kasumi:
             state = self.fun_FO(input, round_i)
             output = self.fun_FL(state, round_i)
 
-        # assert _bitlen(output) <= 32
         return output
 
     def enc_1r(self, in_left, in_right, round_i):
-        # assert _bitlen(in_left)  <= 32
-        # assert _bitlen(in_right) <= 32
-        # assert round_i >= 1 and round_i <= 8
 
         out_right = in_left  # note this is different from normal Feistel
         out_left = in_right ^ self.fun_f(in_left, round_i)
 
-        # assert _bitlen(out_left)  <= 32
-        # assert _bitlen(out_right) <= 32
         return out_left, out_right
 
     def dec_1r(self, in_left, in_right, round_i):
-        # assert _bitlen(in_left)  <= 32
-        # assert _bitlen(in_right) <= 32
-        # assert round_i >= 1 and round_i <= 8
 
         out_left = in_right
         out_right = self.fun_f(in_right, round_i) ^ in_left
 
-        # assert _bitlen(out_left)  <= 32
-        # assert _bitlen(out_right) <= 32
         return out_left, out_right
 
     def enc(self, plaintext):
