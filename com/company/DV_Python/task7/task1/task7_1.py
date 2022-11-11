@@ -23,17 +23,17 @@ logger.addHandler(stdout_handler)
 
 
 def task1():
-    programDir = os.path.abspath('.')
-    logger.info(f"Program folder: {programDir}")
-    testDir = os.path.join(programDir, 'Test')
-    logger.info(f"Test folder: {testDir}")
-    bmpFile = glob.glob(os.path.join(testDir, '*.bmp'))[0]
+    programDirectory = os.path.abspath('.')
+    logger.info(f"Program folder: {programDirectory}")
+    testDirectory = os.path.join(programDirectory, 'test')
+    logger.info(f"Test folder: {testDirectory}")
+    bmpFile = glob.glob(os.path.join(testDirectory, '*.bmp'))[0]
     logger.info(f"Get .bmp file path {bmpFile}")
-    wordFile = glob.glob(os.path.join(testDir, '*.docx'))[0]
+    wordFile = glob.glob(os.path.join(testDirectory, '*.docx'))[0]
     logger.info(f"Get .docx file path {wordFile}")
-    os.system(bmpFile)
+    os.startfile(bmpFile)
     logger.info(f"Start .bmp file")
-    os.system(wordFile)
+    os.startfile(wordFile)
     logger.info(f"Start .docx file")
 
 
