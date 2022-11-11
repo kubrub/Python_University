@@ -118,10 +118,10 @@ class Kasumi:
         in_left = input >> 16
         in_right = input & 0xFFFF
 
-        out_left = in_right  # this is not Feistel at all, maybe not reversible
+        out_left = in_right
         out_right = self.fun_FI(in_left ^ self.key_KO1[round_i], self.key_KI1[round_i]) ^ in_right
 
-        in_left = out_right  # use in_* as temp variables
+        in_left = out_right
         in_right = self.fun_FI(out_left ^ self.key_KO2[round_i],
                                self.key_KI2[round_i]) ^ out_right
 
@@ -154,7 +154,7 @@ class Kasumi:
 
     def enc_1r(self, in_left, in_right, round_i):
 
-        out_right = in_left  # note this is different from normal Feistel
+        out_right = in_left
         out_left = in_right ^ self.fun_f(in_left, round_i)
 
         return out_left, out_right
@@ -192,11 +192,6 @@ if __name__ == '__main__':
 
     encrypted = my_kasumi.enc(text)
     print('encrypted', hex(encrypted))
-
-    for i in range(99):  # for testing
-        encrypted = my_kasumi.enc(encrypted)
-    for i in range(99):
-        encrypted = my_kasumi.dec(encrypted)
 
     decrypted = my_kasumi.dec(encrypted)
     print('decrypted', hex(decrypted))
