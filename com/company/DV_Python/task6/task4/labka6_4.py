@@ -22,28 +22,28 @@ logger.addHandler(stdout_handler)
 
 
 def task4():
-    programDir = os.path.abspath('.')
-    testFolder = os.path.join(programDir, 'test')
-    filesAtDir = glob.glob(os.path.join(testFolder, '*'))
+    programDirectory = os.path.abspath('.')
+    testDirectory = os.path.join(programDirectory, 'test')
+    filesAtDirectory = glob.glob(os.path.join(testDirectory, '*'))
     fileWithExtensions = []
     uniqueExtensions = []
-    for path in filesAtDir:
-        root, ext = os.path.splitext(path)
+    for path in filesAtDirectory:
+        root, extensions = os.path.splitext(path)
         head, filename = os.path.split(path)
-        if ext not in uniqueExtensions:
-            uniqueExtensions.append(ext)
-        fileWithExtensions.append({'path': path, 'name': filename, 'ext': ext})
+        if extensions not in uniqueExtensions:
+            uniqueExtensions.append(extensions)
+        fileWithExtensions.append({'path': path, 'name': filename, 'ext': extensions})
     logger.info(uniqueExtensions)
     for extension in uniqueExtensions:
-        newDirName = os.path.join(programDir, f'Test_{extension[1:]}')
+        newDirName = os.path.join(programDirectory, f'test_{extension[1:]}')
         os.mkdir(newDirName)
-    logger.info('New folder created')
+    logger.info('new folder created')
     for file in fileWithExtensions:
-        newDirName = os.path.join(programDir, f'Test_{file["ext"][1:]}')
+        newDirName = os.path.join(programDirectory, f'test_{file["ext"][1:]}')
         newFileName = os.path.join(newDirName, file["name"])
         os.chmod(file['path'], stat.S_IRWXU | stat.S_IRWXG | stat.S_IRWXO)
         os.replace(file['path'], newFileName)
-    logger.info('Files moved')
+    logger.info('files moved')
 
 
 if __name__ == '__main__':

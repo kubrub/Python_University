@@ -1,5 +1,7 @@
 import os
 import os.path
+import glob
+import time
 import logging
 import sys
 
@@ -21,24 +23,23 @@ logger.addHandler(file_handler)
 logger.addHandler(stdout_handler)
 
 
-def getFilesList(directory):
+def getListOfFilesInDirectory(directory):
     files = []
     for file in os.listdir(directory):
         size = os.path.getsize(os.path.join(directory, file))
-        files.append((file, size))
+        files.append((file, size))  
     return files
 
 
 def task2():
-    programDir = os.path.abspath('.')
-    testDir = os.path.join(programDir, 'Test')
-    dir1Path = os.path.join(testDir, 'folder1')
-    dir2Path = os.path.join(testDir, 'folder2')
-    files1 = getFilesList(dir1Path)
-    files2 = getFilesList(dir2Path)
-    intersection = [value for value in files1 if value in files2]
-    logger.info('Same files in folder1 and f'
-                'older2:')
+    programFolder = os.path.abspath('.')
+    testFolder = os.path.join(programFolder, 'Test')
+    folder1Path = os.path.join(testFolder, 'Folder1')
+    folder2Path = os.path.join(testFolder, 'Folder2')
+    filesFromFolder1 = getListOfFilesInDirectory(folder1Path)
+    filesFromFolder2 = getListOfFilesInDirectory(folder2Path)
+    intersection = [value for value in filesFromFolder1 if value in filesFromFolder2]
+    logger.info('Same files in Folder1 and Folder2:')
     for file in intersection:
         logger.info(f'{file[0]} \t with {file[1]} bytes')
 

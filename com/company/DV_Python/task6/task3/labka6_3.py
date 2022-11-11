@@ -23,13 +23,13 @@ logger.addHandler(stdout_handler)
 
 def task3():
     extension = input('Please enter extension (txt, pdf, etc.):')
-    programFolder = os.path.abspath('.')
-    testFolder = os.path.join(programFolder, 'test')
-    dirs = os.listdir(testFolder)
+    programDirectory = os.path.abspath('.')
+    testDirectory = os.path.join(programDirectory, 'test')
+    dirs = os.listdir(testDirectory)
     filesInFolder = False
     logger.info(f'Files with {extension} extension:')
     for d in dirs:
-        path = os.path.join(testFolder, d)
+        path = os.path.join(testDirectory, d)
         files = os.listdir(path)
         for file in files:
             root, ext = os.path.splitext(file)
