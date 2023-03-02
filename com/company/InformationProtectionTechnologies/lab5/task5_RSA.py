@@ -1,6 +1,7 @@
 from math import sqrt
 import random
 from random import randint as rand
+import easygui
 
 
 def gcd(a, b):
@@ -95,13 +96,16 @@ if __name__ == "__main__":
     print("Running RSA...")
     print("Generating public/private keypair...")
     public, private = generate_keypair(
-        p, q, 2**bit_length)
+        p, q, 2**bit_length)  # 8 is the keysize (bit-length) value.
     print("Public Key: ", public)
     print("Private Key: ", private)
+
     msg = input("Write msg: ")
     print([ord(c) for c in msg])
     encrypted_msg = encrypt(msg, public)
     print("Encrypted msg: ")
-    print(''.join(map(lambda x: str(x), encrypted_msg)))
+    enc = ''.join(map(lambda x: str(x), encrypted_msg))
+    print(enc)
     print("Decrypted msg: ")
-    print(decrypt(encrypted_msg, private))
+    dec = decrypt(encrypted_msg, private)
+    print(dec)
