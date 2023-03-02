@@ -5,10 +5,10 @@ def getData(fileName):
 
     trumDirection is: forward, backward
 
-    Data input format must be:
+    IntelligentDataAnalysis input format must be:
         tramNumber-trumDirection:stop1-stop2-stop3-...
 
-    Data output format is:
+    IntelligentDataAnalysis output format is:
     {'tramNumber':
         {
             'forward': [stop1, stop2, stop3],
