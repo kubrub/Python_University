@@ -1,36 +1,25 @@
-[01/03/2023 23:01:28]:Program has started
-[01/03/2023 23:01:28]:Found 2 files: .\file1.dat .\problem\file2.dat
-[01/03/2023 23:01:28]:Got file names
-[01/03/2023 23:01:31]:File .\file1.dat chosen
-[01/03/2023 23:01:31]:Got full path to file - D:\Projects\Universities_laboratory_works\com\company\OSandOP\lab2\file1.dat
-[01/03/2023 23:01:31]:Got info about file - .\file1.dat
-[01/03/2023 23:01:31]:Got content of file - .\file1.dat
-[01/03/2023 23:01:31]:The calculation of the sum has started in the file .\file1.dat
-[01/03/2023 23:01:31]:Got content of file - .\file1.dat
-[01/03/2023 23:01:31]:Sum has been calculated
-[01/03/2023 23:01:32]:Program has finished
-[01/03/2023 23:01:34]:Program has started
-[01/03/2023 23:01:34]:Found 2 files: .\file1.dat .\problem\file2.dat
-[01/03/2023 23:01:34]:Got file names
-[01/03/2023 23:01:36]:File .\problem\file2.dat chosen
-[01/03/2023 23:01:36]:Got full path to file - D:\Projects\Universities_laboratory_works\com\company\OSandOP\lab2\problem\file2.dat
-[01/03/2023 23:01:36]:Got info about file - .\problem\file2.dat
-[01/03/2023 23:01:36]:Got content of file - .\problem\file2.dat
-[01/03/2023 23:01:36]:The calculation of the sum has started in the file .\problem\file2.dat
-[01/03/2023 23:01:36]:Got content of file - .\problem\file2.dat
-[01/03/2023 23:01:36]:Ñorrupted data g was found and replaced with 0
-[01/03/2023 23:01:36]:Ñorrupted data p was found and replaced with 0
-[01/03/2023 23:01:36]:Ñorrupted data q was found and replaced with 0
-[01/03/2023 23:01:36]:Sum has been calculated
-[01/03/2023 23:01:39]:Program has finished
-[01/03/2023 23:01:42]:Program has started
-[01/03/2023 23:01:42]:Found 2 files: .\file1.dat .\problem\file2.dat
-[01/03/2023 23:01:42]:Got file names
-[01/03/2023 23:01:47]:Replacing number was changed to 3
-[01/03/2023 23:01:48]:File .\file1.dat chosen
-[01/03/2023 23:01:48]:Got full path to file - D:\Projects\Universities_laboratory_works\com\company\OSandOP\lab2\file1.dat
-[01/03/2023 23:01:48]:Got info about file - .\file1.dat
-[01/03/2023 23:01:48]:Got content of file - .\file1.dat
-[01/03/2023 23:01:48]:The calculation of the sum has started in the file .\file1.dat
-[01/03/2023 23:01:48]:Got content of file - .\file1.dat
-[01/03/2023 23:01:48]:Sum has been calculated
+[03/03/2023 14:19:49]:Program has started
+[03/03/2023 14:19:49]:Found 2 files: ./file1.dat ./problem/file2.dat
+[03/03/2023 14:19:49]:Get file names
+[03/03/2023 14:19:51]:File ./file1.dat chosen
+[03/03/2023 14:19:51]:Get full path to file - /Users/mac/Desktop/Projects/Universities_laboratory_works/com/company/OSandOP/lab2/file1.dat
+[03/03/2023 14:19:51]:Got info about file - ./file1.dat
+[03/03/2023 14:19:51]:Get content of file - ./file1.dat
+[03/03/2023 14:19:51]:The calculation of the sum has started in the file ./file1.dat
+[03/03/2023 14:19:51]:Get content of file - ./file1.dat
+[03/03/2023 14:19:51]:Sum has been calculated
+[03/03/2023 14:19:51]:Program has finished
+[03/03/2023 14:19:55]:Program has started
+[03/03/2023 14:19:55]:Found 2 files: ./file1.dat ./problem/file2.dat
+[03/03/2023 14:19:55]:Get file names
+[03/03/2023 14:19:57]:File ./problem/file2.dat chosen
+[03/03/2023 14:19:57]:Get full path to file - /Users/mac/Desktop/Projects/Universities_laboratory_works/com/company/OSandOP/lab2/problem/file2.dat
+[03/03/2023 14:19:57]:Got info about file - ./problem/file2.dat
+[03/03/2023 14:19:57]:Get content of file - ./problem/file2.dat
+[03/03/2023 14:19:57]:The calculation of the sum has started in the file ./problem/file2.dat
+[03/03/2023 14:19:57]:Get content of file - ./problem/file2.dat
+[03/03/2023 14:19:57]:Corrupted data e was found and replaced with 0
+[03/03/2023 14:19:57]:Corrupted data d was found and replaced with 0
+[03/03/2023 14:19:57]:Corrupted data g was found and replaced with 0
+[03/03/2023 14:19:57]:Sum has been calculated
+[03/03/2023 14:19:58]:Program has finished
