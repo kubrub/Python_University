@@ -1,5 +1,5 @@
 import numpy as np
-import cv2
+import cv2 #pip install opencv-python
 
 # Завантаження двох зображень
 img1 = cv2.imread('image1.jpg')
